@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Crime and Criminals | English Lesson</title>
+<style>
+:root{
+--navy:#24374b;--blue:#507da4;--blue-light:#eaf2f9;
+--bg:#f1f5f9;--paper:#fff;--line:#d8e2ec;
+--muted:#718195;--green:#26734d;--green-bg:#e6f5eb;
+--red:#a94449;--red-bg:#fff0f0;--gold:#d6a65c;
+}
+*{box-sizing:border-box}
+body{
+margin:0;background:var(--bg);color:var(--navy);
+font-family:Arial,Helvetica,sans-serif;line-height:1.55
+}
+header{
+padding:34px 16px 25px;text-align:center;
+background:linear-gradient(135deg,#dceaf6,#f7f9fc);
+border-bottom:1px solid var(--line)
+}
+.eyebrow{font-size:12px;letter-spacing:2px;color:var(--blue);font-weight:bold}
+header h1{font-size:clamp(30px,6vw,46px);margin:5px 0;color:var(--navy)}
+header p{margin:0;color:var(--muted)}
+main{max-width:1050px;margin:auto;padding:16px}
+section{
+margin:18px 0;padding:clamp(15px,3vw,25px);
+border:1px solid var(--line);border-radius:18px;background:var(--paper);
+box-shadow:0 7px 25px #24374b0b
+}
+.section-head{display:flex;gap:12px;align-items:flex-start;margin-bottom:17px}
+.num{
+width:38px;height:38px;flex-shrink:0;display:grid;place-items:center;
+border-radius:12px;background:var(--blue);color:#fff;font-weight:bold
+}
+h2{font-size:21px;margin:0 0 4px}
+h3{font-size:16px;margin:0 0 8px}
+.instruction{margin:0;color:var(--muted);font-size:14px}
+button,input{font:inherit}
+button{cursor:pointer}
+.btn{
+border:0;border-radius:10px;padding:10px 15px;
+background:var(--blue);color:#fff;font-weight:bold;
+transition:background .15s,transform .15s
+}
+.btn:hover{background:#365f83;transform:translateY(-1px)}
+.btn.light{background:var(--blue-light);color:var(--navy);border:1px solid var(--line)}
+.btn.light:hover{background:#dbe8f4}
+.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:14px}
+.feedback{min-height:23px;margin-top:10px;font-size:14px;font-weight:bold}
+.muted{color:var(--muted)}
+.photo{
+display:flex;align-items:center;justify-content:center;overflow:hidden;
+width:100%;height:210px;border-radius:13px;
+background:linear-gradient(135deg,#e8eff6,#d8e4ef);
+border:1px solid #dce5ee;color:#6e8296;text-align:center
+}
+.photo img{width:100%;height:100%;object-fit:cover;display:block}
+.photo .placeholder{padding:12px;font-size:13px}
+.flash-layout{display:grid;grid-template-columns:1.1fr 1fr;gap:23px;align-items:center}
+.flash-word{font-size:clamp(29px,4vw,40px);font-weight:bold;line-height:1.2}
+.flash-counter{font-size:12px;color:var(--muted);margin-bottom:9px}
+.flash-translation{font-size:18px;margin-top:9px}
+.flash-controls{display:flex;gap:9px;flex-wrap:wrap;margin-top:18px}
+.round-btn{
+border:1px solid var(--line);border-radius:50%;width:42px;height:42px;
+background:var(--blue-light);color:var(--navy);font-size:20px
+}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:13px}
+.card{border:1px solid var(--line);border-radius:14px;padding:11px;min-width:0}
+.card .photo{height:135px;margin-bottom:10px}
+.options{display:grid;gap:6px}
+.options label{
+display:flex;align-items:center;gap:8px;padding:7px;
+background:#f5f8fb;border-radius:8px;cursor:pointer;font-size:14px
+}
+.options label:hover{background:var(--blue-light)}
+input[type=radio]{accent-color:var(--blue)}
+input[type=text],textarea{
+width:100%;min-width:0;border:1px solid #cbd8e5;border-radius:9px;
+padding:10px 11px;color:var(--navy);background:#fff;font:inherit
+}
+input[type=text]:focus,textarea:focus{outline:2px solid #9bb9d5;border-color:var(--blue)}
+.correct{border-color:#78b991!important;background:#f0faf3!important}
+.incorrect{border-color:#d78b8b!important;background:#fff5f5!important}
+
+/* Exercise 3 */
+.context-list{display:grid;gap:11px}
+.context-item{
+display:grid;grid-template-columns:35px 1fr;gap:10px;
+padding:12px;border:1px solid var(--line);border-radius:12px;background:#fbfcfe
+}
+.context-num{
+display:grid;place-items:center;width:30px;height:30px;
+border-radius:9px;background:var(--blue-light);font-weight:bold;color:var(--blue)
+}
+.context-item p{margin:2px 0 8px}
+.context-item input{max-width:360px}
+
+/* Exercise 4 */
+.wordform-list{display:grid;gap:8px}
+.wordform-row{
+display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+gap:12px;align-items:center;padding:9px 11px;
+border-radius:10px;background:#f6f9fc;border:1px solid #e6edf4
+}
+.wordform-source{font-weight:bold}
+.wordform-row input{background:#fff}
+
+/* Exercise 5 */
+.phrase-card{padding:17px}
+.phrase-card .phrase{font-size:20px;font-weight:bold}
+.phrase-card .translation{color:var(--muted);margin-top:8px}
+.phrase-card .photo{height:185px;margin-bottom:15px}
+.phrase-counter{font-size:12px;color:var(--muted);margin-bottom:8px}
+
+/* Exercise 6 */
+.match-board{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.match-col{display:grid;gap:8px;align-content:start}
+.match-item{
+width:100%;padding:11px 12px;border:1px solid var(--line);
+border-radius:10px;background:#f5f8fb;color:var(--navy);
+text-align:left;font-weight:500
+}
+.match-item.selected{border:2px solid var(--blue);background:#e4eff8}
+.match-item.matched{border-color:#91c5a3;background:var(--green-bg)}
+.match-item:disabled{opacity:1;cursor:default}
+.match-hint{font-size:12px;color:var(--muted);margin-bottom:5px}
+
+/* Exercise 7 */
+.definition-list{display:grid;gap:9px}
+.definition-row{
+display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.35fr);
+gap:13px;align-items:center;padding:10px;
+background:#f7f9fc;border:1px solid #e6edf4;border-radius:11px
+}
+.definition-row input{background:white}
+.definition{font-size:14px}
+
+/* Exercise 8 */
+.story{
+font-size:17px;line-height:2.25;padding:18px;
+background:#f8fafc;border:1px solid var(--line);border-radius:13px
+}
+.blank{
+display:inline-flex;align-items:center;justify-content:center;
+min-width:68px;height:31px;margin:0 3px;padding:0 8px;
+border:1px dashed #8ba8c4;border-radius:7px;
+background:#eaf2f9;color:var(--blue-dark);font-weight:bold;
+vertical-align:middle
+}
+.blank.active{outline:3px solid #b8cfe3;background:#d9e9f7}
+.blank.filled{border-style:solid}
+.blank.correct{background:var(--green-bg);border-color:#78b991}
+.blank.incorrect{background:var(--red-bg);border-color:#d78b8b}
+.word-bank{display:flex;flex-wrap:wrap;gap:8px;margin-top:15px}
+.bank-word{
+padding:8px 11px;border:1px solid var(--line);border-radius:9px;
+background:white;color:var(--navy);cursor:pointer
+}
+.bank-word:hover{background:var(--blue-light)}
+.bank-word.used{opacity:.4;text-decoration:line-through}
+.bank-word.selected{border:2px solid var(--blue);background:var(--blue-light)}
+.story-note{font-size:13px;color:var(--muted);margin-top:9px}
+footer{text-align:center;color:var(--muted);font-size:13px;padding:18px}
+@media(max-width:680px){
+main{padding:10px}
+.flash-layout{grid-template-columns:1fr;gap:14px}
+.flash-layout .photo{height:190px}
+.match-board{gap:8px}
+.match-item{padding:9px 7px;font-size:13px;overflow-wrap:anywhere}
+.definition-row{grid-template-columns:1fr;gap:6px}
+.wordform-row{gap:8px;padding:8px}
+.story{font-size:15px;padding:12px}
+.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.card{padding:8px}
+.card .photo{height:115px}
+}
+@media(max-width:390px){
+.grid{grid-template-columns:1fr}
+.card .photo{height:165px}
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="eyebrow">ENGLISH VOCABULARY · A2–B1</div>
+<h1>Crime and Criminals</h1>
+<p>Learn the words. Practise the phrases. Use English in context.</p>
+</header>
+
+<main>
+
+<!-- TASK 1 -->
+<section>
+<div class="section-head">
+<div class="num">1</div>
+<div>
+<h2>Vocabulary flashcards</h2>
+<p class="instruction">Study each crime word. Use the arrows to move between cards.</p>
+</div>
+</div>
+<div class="flash-layout">
+<div class="photo" id="flashPhoto"><div class="placeholder">Add a photo URL in the code</div></div>
+<div>
+<div class="flash-counter" id="flashCounter"></div>
+<div class="flash-word" id="flashWord"></div>
+<div class="flash-controls">
+<button class="round-btn" id="prevFlash" aria-label="Previous card">←</button>
+<button class="round-btn" id="nextFlash" aria-label="Next card">→</button>
+<button class="btn light" id="shuffleFlash">Shuffle cards</button>
+</div>
+</div>
+</div>
+</section>
+
+<!-- TASK 2 -->
+<section>
+<div class="section-head">
+<div class="num">2</div>
+<div>
+<h2>Choose the correct word</h2>
+<p class="instruction">Look at each picture and choose the correct crime.</p>
+</div>
+</div>
+<div class="grid" id="crimeQuiz"></div>
+<div class="actions">
+<button class="btn" id="checkCrimeQuiz">Check answers</button>
+<button class="btn light" id="resetCrimeQuiz">Reset</button>
+</div>
+<div class="feedback" id="crimeQuizFeedback" aria-live="polite"></div>
+</section>
+
+<!-- TASK 3 -->
+<section>
+<div class="section-head">
+<div class="num">3</div>
+<div>
+<h2>Complete the sentences</h2>
+<p class="instruction">Read the context and write the correct crime word in each gap.</p>
+</div>
+</div>
+<div class="context-list" id="contextTasks"></div>
+<div class="actions">
+<button class="btn" id="checkContext">Check answers</button>
+<button class="btn light" id="resetContext">Reset</button>
+</div>
+<div class="feedback" id="contextFeedback" aria-live="polite"></div>
+</section>
+
+<!-- TASK 4 -->
+<section>
+<div class="section-head">
+<div class="num">4</div>
+<div>
+<h2>Word formation: crimes and criminals</h2>
+<p class="instruction">Write the word for a person who commits each crime.</p>
+</div>
+</div>
+<div class="wordform-list" id="wordformTasks"></div>
+<div class="actions">
+<button class="btn" id="checkWordform">Check answers</button>
+<button class="btn light" id="resetWordform">Reset</button>
+</div>
+<div class="feedback" id="wordformFeedback" aria-live="polite"></div>
+</section>
+
+<!-- TASK 5 -->
+<section>
+<div class="section-head">
+<div class="num">5</div>
+<div>
+<h2>Useful police phrases</h2>
+<p class="instruction">Learn each phrase and its Russian translation. Flip through the cards.</p>
+</div>
+</div>
+<div class="phrase-card">
+<div class="phrase-counter" id="phraseCounter"></div>
+<div class="photo" id="phrasePhoto"><div class="placeholder">Police investigation photo</div></div>
+<div class="phrase" id="phraseWord" style="margin-top:14px"></div>
+<div class="translation" id="phraseTranslation"></div>
+<div class="flash-controls">
+<button class="round-btn" id="prevPhrase" aria-label="Previous phrase">←</button>
+<button class="round-btn" id="nextPhrase" aria-label="Next phrase">→</button>
+<button class="btn light" id="shufflePhrases">Shuffle cards</button>
+</div>
+</div>
+</section>
+
+<!-- TASK 6 -->
+<section>
+<div class="section-head">
+<div class="num">6</div>
+<div>
+<h2>Match the words</h2>
+<p class="instruction">First, click a verb on the left. Then click the matching noun on the right.</p>
+</div>
+</div>
+<div class="match-board">
+<div>
+<div class="match-hint">VERBS</div>
+<div class="match-col" id="verbColumn"></div>
+</div>
+<div>
+<div class="match-hint">NOUNS</div>
+<div class="match-col" id="nounColumn"></div>
+</div>
+</div>
+<div class="actions"><button class="btn light" id="resetMatch">Start again</button></div>
+<div class="feedback" id="matchFeedback" aria-live="polite"></div>
+</section>
+
+<!-- TASK 7 -->
+<section>
+<div class="section-head">
+<div class="num">7</div>
+<div>
+<h2>Which phrase is it?</h2>
+<p class="instruction">Read each definition and write the correct phrase.</p>
+</div>
+</div>
+<div class="definition-list" id="definitionTasks"></div>
+<div class="actions">
+<button class="btn" id="checkDefinitions">Check answers</button>
+<button class="btn light" id="resetDefinitions">Reset</button>
+</div>
+<div class="feedback" id="definitionFeedback" aria-live="polite"></div>
+</section>
+
+<!-- TASK 8 -->
+<section>
+<div class="section-head">
+<div class="num">8</div>
+<div>
+<h2>Crime and criminals: a short text</h2>
+<p class="instruction">Click a numbered gap, then click a word or phrase in the word bank.</p>
+</div>
+</div>
+<div class="story" id="storyText"></div>
+<div class="story-note" id="selectedGapNote">First, select a numbered gap in the text.</div>
+<div class="word-bank" id="wordBank"></div>
+<div class="actions">
+<button class="btn" id="checkStory">Check answers</button>
+<button class="btn light" id="resetStory">Start again</button>
+</div>
+<div class="feedback" id="storyFeedback" aria-live="polite"></div>
+</section>
+
+<footer>Keep learning, keep practising.</footer>
+</main>
+
+<script>
+/* Add a photo URL in the image field for each word.
+If image is empty, the card shows a reminder instead. */
+const crimes=[
+{word:"arson",image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIyUM-BsSVVKCfLgPzGxYDXuqafn_gAjGgEgLQIbGgiA&s"},
+{word:"drug-dealing",image:"https://media.istockphoto.com/id/2253790025/vector/no-drugs-sign-icon.jpg?s=612x612&w=0&k=20&c=Z069U9Mza0bZJYO1itfF8Z-gOL3LbbqIN2qaY4GObZg="},
+{word:"looting",image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhcUH_61iMn8Il1yas-bz11CS7xM6Ms7aOS0q_6W0UjzYfMBiK4ZfhycU&s=10"},
+{word:"burglary",image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOGuEsnbtWTJsneoxCRDVl0qmInLRHZTS2vsvVKKG-yESarres3RfNGpI&s=10"},
+{word:"mugging",image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5Ya4CTYCGfI2NmZ7AQ6SgKYHAvxkMray3fgYKtpgI0gbmTyYmbvWJflSW&s=10"},
+{word:"murder",image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStW4Hr3vZby7U6qRrCzS8wR8uo1rMyhcDm06KBiVUoQL1JvkF4HN9qTpsS&s=10"},
+{word:"robbery",image:"https://images.squarespace-cdn.com/content/v1/57ba3b9e29687f1ef5ca5235/1481686391098-XCQ7R6AT35LP82NCBK4I/5203687_orig.jpg"},
+{word:"shoplifting",image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTldo3M-oleknk9H1NRa5aLRHb1N_jOfhqaJOp51HGjKBOE8bAg5qp-x2uy&s=10"},
+{word:"smuggling",image:"https://www.ics-shipping.org/wp-content/uploads/2024/01/shutterstock_1647038335-1-small.jpg"},
+{word:"theft",image:"https://media.licdn.com/dms/image/v2/C4D12AQHtyIlWTAATVw/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1582793759351?e=2147483647&v=beta&t=fCqxyKAKLgbFaoNPx81JnCyaR8jUEC0kiN-dSzy-gNg"},
+{word:"vandalism",image:"https://i.guim.co.uk/img/media/a4661159218e37698c0843221e15fa647de97435/0_210_3500_2101/master/3500.jpg?width=465&dpr=1&s=none&crop=none"}
+];
+
+const criminals=[
+{crime:"arson",answer:["arsonist"]},
+{crime:"burglary",answer:["burglar"]},
+{crime:"drug-dealing",answer:["drug dealer","drug-dealer"]},
+{crime:"looting",answer:["looter"]},
+{crime:"mugging",answer:["mugger"]},
+{crime:"murder",answer:["murderer"]},
+{crime:"robbery",answer:["robber"]},
+{crime:"shoplifting",answer:["shoplifter"]},
+{crime:"smuggling",answer:["smuggler"]},
+{crime:"theft",answer:["thief"]},
+{crime:"vandalism",answer:["vandal"]}
+];
+
+const phrases=[
+{phrase:"launch an investigation",translation:"начать расследование",verb:"launch",noun:"an investigation",image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK41VXQCuDwxoghJkVHsiS5rbhED89vZCCbN-Jjce1Awhyd0_LueCVkpY&s=10"},
+{phrase:"search a house",translation:"обыскать дом",verb:"search",noun:"a house",image:"https://www.shutterstock.com/image-photo/indoor-photo-picture-shows-intense-260nw-2545850803.jpg"},
+{phrase:"interview the suspect",translation:"опросить подозреваемого",verb:"interview",noun:"the suspect",image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxr1fYnfHJaUDvUUI0o3j2bPY8IoW28JUrdtJGBHBeWr6F-L6jtAtKKCU&s=10"},
+{phrase:"make an arrest",translation:"произвести арест",verb:"make",noun:"an arrest",image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7d5f_ntX0J2fKcQISZOakp9cgylhpJM6p3ROOnwZ3FQEIcQLHgz8Ni9xN&s=10"},
+{phrase:"appeal for witnesses",translation:"обратиться к свидетелям с просьбой откликнуться",verb:"appeal",noun:"for witnesses",image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-oKh_h0b78LlyAjus1WC_UzuMpEAXj0RV2xc9eL3wgbFoQOjj1XkbZho&s=10"},
+{phrase:"study CCTV footage",translation:"изучить записи камер видеонаблюдения",verb:"study",noun:"CCTV footage",image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVBjQa8Un4VSkzMjHn0KUheaFCYAzyo4IwXtmM5xX0j42i0uXr9DREL5Q&s=10"},
+{phrase:"identify a culprit",translation:"установить виновного",verb:"identify",noun:"a culprit",image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6HJVxpee3QZlV9zjsGev2eywX-3yfhmuyxVufG8sIpYJW7sGOLZi_0p7n&s=10"},
+{phrase:"patrol an area",translation:"патрулировать район",verb:"patrol",noun:"an area",image:"https://www.shutterstock.com/editorial/image-editorial/M9T8A71dNdTbA753NTUwNzU=/police-personnel-italy-china-patrol-area-surrounding-440nw-10465926d.jpg"}
+];
+
+const $=id=>document.getElementById(id);
+const shuffle=array=>{
+const a=[...array];
+for(let i=a.length-1;i>0;i--){
+const j=Math.floor(Math.random()*(i+1));
+[a[i],a[j]]=[a[j],a[i]];
+}
+return a;
+};
+const normalize=s=>s.trim().toLowerCase().replace(/[.!?,]/g,"").replace(/\s+/g," ");
+function photoHTML(url,alt){
+if(url && url.trim()){
+const safe=url.replace(/&/g,"&amp;").replace(/"/g,"&quot;");
+return `<div class="photo"><img src="${safe}" alt="${alt}" loading="lazy" onerror="this.parentElement.innerHTML='<div class=&quot;placeholder&quot;>Image unavailable — check the URL</div>'"></div>`;
+}
+return `<div class="photo"><div class="placeholder">Add a photo URL in the <b>image</b> field<br><span class="muted">${alt}</span></div></div>`;
+}
+
+/* TASK 1: flashcards */
+let crimeOrder=[...crimes.keys()],crimeIndex=0;
+function renderCrimeFlash(){
+const c=crimes[crimeOrder[crimeIndex]];
+$("flashPhoto").outerHTML=photoHTML(c.image,c.word).replace('class="photo"','class="photo" id="flashPhoto"');
+$("flashCounter").textContent=`Card ${crimeIndex+1} of ${crimes.length}`;
+$("flashWord").textContent=c.word;
+}
+$("prevFlash").onclick=()=>{crimeIndex=(crimeIndex-1+crimes.length)%crimes.length;renderCrimeFlash()};
+$("nextFlash").onclick=()=>{crimeIndex=(crimeIndex+1)%crimes.length;renderCrimeFlash()};
+$("shuffleFlash").onclick=()=>{crimeOrder=shuffle(crimeOrder);crimeIndex=0;renderCrimeFlash()};
+renderCrimeFlash();
+
+/* TASK 2: picture quiz */
+function renderCrimeQuiz(){
+$("crimeQuiz").innerHTML=crimes.map((c,i)=>{
+const options=shuffle([c,...shuffle(crimes.filter(x=>x.word!==c.word)).slice(0,3)]);
+return `<div class="card">
+${photoHTML(c.image,c.word)}
+<div class="options">${options.map(o=>`
+<label><input type="radio" name="crime${i}" value="${o.word}"> ${o.word}</label>
+`).join("")}</div>
+</div>`;
+}).join("");
+}
+renderCrimeQuiz();
+$("checkCrimeQuiz").onclick=()=>{
+let score=0,answered=0;
+crimes.forEach((c,i)=>{
+const v=document.querySelector(`input[name="crime${i}"]:checked`);
+if(v){answered++;if(v.value===c.word)score++;}
+});
+$("crimeQuizFeedback").textContent=`Score: ${score}/${crimes.length}. Answered: ${answered}/${crimes.length}.`;
+};
+$("resetCrimeQuiz").onclick=()=>{
+document.querySelectorAll("#crimeQuiz input").forEach(x=>x.checked=false);
+$("crimeQuizFeedback").textContent="";
+};
+
+/* TASK 3: context sentences */
+const contextQuestions=[
+{sentence:"Someone deliberately set fire to an empty building. The police are investigating the ______.",answer:"arson"},
+{sentence:"A person sells illegal drugs to other people. This crime is called ______.",answer:"drug-dealing"},
+{sentence:"During the unrest, people broke into shops and stole goods. This was ______.",answer:"looting"},
+{sentence:"Someone entered a house while the owners were away and stole a laptop. This was a ______.",answer:"burglary"},
+{sentence:"A person attacked someone in the street and stole their phone. This was a ______.",answer:"mugging"},
+{sentence:"The police are investigating the unlawful killing of a person. They suspect ______.",answer:"murder"},
+{sentence:"A person threatened a bank worker and stole money from the bank. This was a ______.",answer:"robbery"},
+{sentence:"A customer secretly took a pair of sunglasses from a shop without paying. This was ______.",answer:"shoplifting"},
+{sentence:"Someone brought illegal goods across the border secretly. This was ______.",answer:"smuggling"},
+{sentence:"A student took another student's phone without permission. The phone ______ was reported to the school.",answer:"theft"},
+{sentence:"Someone broke windows and wrote on the walls of a bus stop. This was ______.",answer:"vandalism"}
+];
+$("contextTasks").innerHTML=contextQuestions.map((q,i)=>`
+<div class="context-item">
+<div class="context-num">${i+1}</div>
+<div><p>${q.sentence}</p>
+<input type="text" id="context${i}" placeholder="Write the crime word..." aria-label="Answer ${i+1}">
+</div>
+</div>
+`).join("");
+$("checkContext").onclick=()=>{
+let score=0;
+contextQuestions.forEach((q,i)=>{
+const field=$("context"+i);field.classList.remove("correct","incorrect");
+if(normalize(field.value)===q.answer){score++;field.classList.add("correct")}
+else field.classList.add("incorrect");
+});
+$("contextFeedback").textContent=`Correct answers: ${score}/${contextQuestions.length}.`;
+};
+$("resetContext").onclick=()=>{
+contextQuestions.forEach((q,i)=>{$("context"+i).value="";$("context"+i).classList.remove("correct","incorrect")});
+$("contextFeedback").textContent="";
+};
+
+/* TASK 4: word formation */
+$("wordformTasks").innerHTML=criminals.map((c,i)=>`
+<div class="wordform-row">
+<div class="wordform-source">${c.crime}</div>
+<input type="text" id="criminal${i}" aria-label="Criminal form of ${c.crime}" placeholder="Name of the criminal...">
+</div>
+`).join("");
+$("checkWordform").onclick=()=>{
+let score=0;
+criminals.forEach((c,i)=>{
+const field=$("criminal"+i);field.classList.remove("correct","incorrect");
+if(c.answer.includes(normalize(field.value))){score++;field.classList.add("correct")}
+else field.classList.add("incorrect");
+});
+$("wordformFeedback").textContent=`Correct forms: ${score}/${criminals.length}.`;
+};
+$("resetWordform").onclick=()=>{
+criminals.forEach((c,i)=>{$("criminal"+i).value="";$("criminal"+i).classList.remove("correct","incorrect")});
+$("wordformFeedback").textContent="";
+};
+
+/* TASK 5: phrase flashcards */
+let phraseOrder=[...phrases.keys()],phraseIndex=0;
+function renderPhrase(){
+const p=phrases[phraseOrder[phraseIndex]];
+$("phrasePhoto").outerHTML=photoHTML(p.image,p.phrase).replace('class="photo"','class="photo" id="phrasePhoto"');
+$("phraseCounter").textContent=`Phrase ${phraseIndex+1} of ${phrases.length}`;
+$("phraseWord").textContent=p.phrase;
+$("phraseTranslation").textContent=p.translation;
+}
+$("prevPhrase").onclick=()=>{phraseIndex=(phraseIndex-1+phrases.length)%phrases.length;renderPhrase()};
+$("nextPhrase").onclick=()=>{phraseIndex=(phraseIndex+1)%phrases.length;renderPhrase()};
+$("shufflePhrases").onclick=()=>{phraseOrder=shuffle(phraseOrder);phraseIndex=0;renderPhrase()};
+renderPhrase();
+
+/* TASK 6: match verbs first, then nouns */
+let chosenVerb = null;
+let matchedPairs = {};
+
+function renderMatching() {
+chosenVerb = null;
+matchedPairs = {};
+
+$("verbColumn").innerHTML = shuffle(phrases).map(p =>
+`<button class="match-item" data-verb="${p.verb}">
+${p.verb}
+</button>`
+).join("");
+
+$("nounColumn").innerHTML = shuffle(phrases).map(p =>
+`<button class="match-item"
+data-noun="${p.noun}"
+data-verb-for="${p.verb}">
+${p.noun}
+</button>`
+).join("");
+
+$("matchFeedback").textContent = "";
+
+document.querySelectorAll("#verbColumn button").forEach(button => {
+button.onclick = () => {
+if (matchedPairs[button.dataset.verb]) return;
+
+chosenVerb = button.dataset.verb;
+$("matchFeedback").textContent =
+"Now choose the matching noun on the right.";
+updateMatchingStyles();
+};
+});
+
+document.querySelectorAll("#nounColumn button").forEach(button => {
+button.onclick = () => {
+if (!chosenVerb) {
+$("matchFeedback").textContent =
+"Select a verb in the left column first.";
+return;
+}
+
+if (button.dataset.verbFor === chosenVerb) {
+matchedPairs[chosenVerb] = true;
+chosenVerb = null;
+updateMatchingStyles();
+
+$("matchFeedback").textContent =
+Object.keys(matchedPairs).length === phrases.length
+? "Excellent! All pairs are correct."
+: "Correct! Choose the next verb.";
+} else {
+$("matchFeedback").textContent =
+"Not a match. Try another noun.";
+}
+};
+});
+
+updateMatchingStyles();
+}
+
+function updateMatchingStyles() {
+document.querySelectorAll("#verbColumn button").forEach(button => {
+button.classList.toggle(
+"selected",
+button.dataset.verb === chosenVerb
+);
+button.classList.toggle(
+"matched",
+!!matchedPairs[button.dataset.verb]
+);
+});
+
+document.querySelectorAll("#nounColumn button").forEach(button => {
+button.classList.toggle(
+"matched",
+!!matchedPairs[button.dataset.verbFor]
+);
+});
+}
+
+$("resetMatch").onclick = renderMatching;
+renderMatching();
+
+
+/* TASK 7: definitions */
+const definitions = [
+{definition:"To begin an official inquiry into a crime.", answer:"launch an investigation"},
+{definition:"To look through a building for evidence or something connected with a crime.", answer:"search a house"},
+{definition:"To ask a person who may know something about a crime questions.", answer:"interview the suspect"},
+{definition:"To take someone into police custody.", answer:"make an arrest"},
+{definition:"To ask people who saw an event to contact the police.", answer:"appeal for witnesses"},
+{definition:"To examine video recordings from security cameras.", answer:"study CCTV footage"},
+{definition:"To discover who committed a crime.", answer:"identify a culprit"},
+{definition:"To move around a place to help keep it safe.", answer:"patrol an area"}
+];
+
+// Перемешиваем дефиниции при отображении
+function renderDefinitions() {
+const shuffledDefinitions = shuffle([...definitions]);
+
+$("definitionTasks").innerHTML = shuffledDefinitions.map((d, i) => `
+<div class="definition-row">
+<input
+type="text"
+id="definition${i}"
+data-answer="${d.answer}"
+placeholder="Write the phrase..."
+aria-label="Phrase ${i + 1}"
+>
+<div class="definition">
+<b>${i + 1}.</b> ${d.definition}
+</div>
+</div>
+`).join("");
+
+$("definitionFeedback").textContent = "";
+}
+
+// Проверка ответов
+$("checkDefinitions").onclick = () => {
+let score = 0;
+
+definitions.forEach(d => {
+const field = [...$("definitionTasks").querySelectorAll("input")]
+.find(input => input.dataset.answer === d.answer);
+
+if (!field) return;
+
+field.classList.remove("correct", "incorrect");
+
+if (normalize(field.value) === normalize(d.answer)) {
+score++;
+field.classList.add("correct");
+} else {
+field.classList.add("incorrect");
+}
+});
+
+$("definitionFeedback").textContent =
+`Correct phrases: ${score}/${definitions.length}.`;
+};
+
+// Сброс и новое перемешивание дефиниций
+$("resetDefinitions").onclick = () => {
+renderDefinitions();
+};
+
+// Первое отображение задания
+renderDefinitions();
+
+/* TASK 8: click a gap, then choose a word */
+
+const storyHTML = `
+Last Friday, the police received reports about several crimes in a small town.
+
+Someone entered a house without permission while the owners were away and stole a computer. The police recorded the crime as
+<button class="blank" data-gap="0">1. ______</button>.
+
+A shop assistant then noticed that a customer had secretly taken products from the shelves without paying. This was
+<button class="blank" data-gap="1">2. ______</button>.
+
+A witness reported that someone had damaged a bus stop by breaking its windows and writing on the walls. This was
+<button class="blank" data-gap="2">3. ______</button>.
+
+The police opened an official inquiry into all three incidents. They decided to
+<button class="blank" data-gap="3">4. ______</button>.
+
+During the inquiry, an officer questioned the person whom the police suspected of being involved in the shoplifting. The officer needed to
+<button class="blank" data-gap="4">5. ______</button>.
+
+The police had not yet found everyone who had seen the incidents. They asked anyone who had witnessed the crimes to contact them and decided to
+<button class="blank" data-gap="5">6. ______</button>.
+
+To look for evidence connected with the burglary, officers went inside the house and examined the rooms. They needed to
+<button class="blank" data-gap="6">7. ______</button>.
+
+The shop also had security cameras. The police watched the recordings to see what had happened and decided to
+<button class="blank" data-gap="7">8. ______</button>.
+
+After examining the evidence, the police worked out who was responsible. They managed to
+<button class="blank" data-gap="8">9. ______</button>.
+
+They then took the suspect into police custody and proceeded to
+<button class="blank" data-gap="9">10. ______</button>.
+
+The investigation showed that taking property without permission is a crime called
+<button class="blank" data-gap="10">11. ______</button>.
+
+It also reminded the community that using threats or force to steal money or property from a person or place is
+<button class="blank" data-gap="11">12. ______</button>.
+`;
+
+const storyAnswers = [
+"burglary",
+"shoplifting",
+"vandalism",
+"launch an investigation",
+"interview the suspect",
+"appeal for witnesses",
+"search a house",
+"study CCTV footage",
+"identify a culprit",
+"make an arrest",
+"theft",
+"robbery"
+];
+
+const bankWords = shuffle([
+...storyAnswers,
+"arson",
+"looting",
+"mugging",
+"drug-dealing",
+"smuggling",
+"murder",
+"patrol an area"
+]);
+
+let gapValues = Array(storyAnswers.length).fill(null);
+let activeGap = null;
+
+function renderStory() {
+$("storyText").innerHTML = storyHTML;
+
+$("wordBank").innerHTML = bankWords.map(word => `
+<button class="bank-word" data-word="${word}">
+${word}
+</button>
+`).join("");
+
+document.querySelectorAll(".blank").forEach(button => {
+button.onclick = () => {
+activeGap = Number(button.dataset.gap);
+$("selectedGapNote").textContent =
+`Gap ${activeGap + 1} selected. Now choose a word below.`;
+updateStory();
+};
+});
+
+document.querySelectorAll(".bank-word").forEach(button => {
+button.onclick = () => {
+if (activeGap === null) {
+$("selectedGapNote").textContent =
+"Please click a numbered gap in the text first.";
+return;
+}
+
+gapValues[activeGap] = button.dataset.word;
+activeGap = null;
+
+$("selectedGapNote").textContent =
+"Answer selected. Click another numbered gap to continue.";
+
+updateStory();
+};
+});
+
+$("storyFeedback").textContent = "";
+updateStory();
+}
+
+function updateStory() {
+document.querySelectorAll(".blank").forEach(button => {
+const i = Number(button.dataset.gap);
+button.textContent = gapValues[i] || `${i + 1}. ______`;
+
+button.classList.toggle("active", i === activeGap);
+button.classList.toggle("filled", Boolean(gapValues[i]));
+button.classList.remove("correct", "incorrect");
+});
+
+document.querySelectorAll(".bank-word").forEach(button => {
+button.classList.toggle(
+"used",
+gapValues.includes(button.dataset.word)
+);
+});
+}
+
+$("checkStory").onclick = () => {
+let score = 0;
+
+document.querySelectorAll(".blank").forEach(button => {
+const i = Number(button.dataset.gap);
+button.classList.remove("correct", "incorrect");
+
+if (normalize(gapValues[i] || "") === storyAnswers[i]) {
+score++;
+button.classList.add("correct");
+} else {
+button.classList.add("incorrect");
+}
+});
+
+$("storyFeedback").textContent =
+`Correct gaps: ${score}/${storyAnswers.length}.`;
+};
+
+$("resetStory").onclick = () => {
+gapValues = Array(storyAnswers.length).fill(null);
+activeGap = null;
+$("selectedGapNote").textContent =
+"First, select a numbered gap in the text.";
+renderStory();
+};
+
+renderStory();
+</script>
+</body>
+</html>
